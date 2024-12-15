@@ -26,3 +26,5 @@ logs
 
 public/chrome-mac
 public/chrome-win
+dist/*
+dist.zip
