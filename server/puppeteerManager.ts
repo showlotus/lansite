@@ -9,13 +9,21 @@ const __dirname = path.dirname(__filename)
 const getExecutablePath = () => {
   const platform = os.platform()
 
+  let executablePath = ''
+  const publicDir = process.dev ? '../../public' : '../public'
   if (platform === 'darwin') {
     // macOS
-    return path.join(__dirname, '../../public/chrome-mac/Chromium.app/Contents/MacOS/Chromium')
+    executablePath = path.join(
+      __dirname,
+      publicDir,
+      'chrome-mac/Chromium.app/Contents/MacOS/Chromium',
+    )
   } else if (platform === 'win32') {
     // Windows
-    return path.join(__dirname, '../../public/chrome-win/chrome.exe')
+    executablePath = path.join(__dirname, publicDir, 'chrome-win/chrome.exe')
   }
+
+  return executablePath
 }
 
 class PuppeteerManager {
