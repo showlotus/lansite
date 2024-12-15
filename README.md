@@ -62,14 +62,16 @@ yarn preview
 
 ## Deploy
 
-In the current project directory:
+Download the [chrome-mac.zip](https://github.com/showlotus/lansite/releases/download/0.1.0/chrome-mac.zip) or [chrome-win.zip](https://github.com/showlotus/lansite/releases/download/0.1.0/chrome-win.zip) from the [release](https://github.com/showlotus/lansite/releases). Then, unzip it into the `public` directory under `dist`.
+
+In the `dist` directory:
 
 ```bash
-node .output/server/index.mjs
+node server/index.mjs
 ```
 
-Custom port:
+Custom port, such as the port is `3872`:
 
 ```bash
-PORT=3872 node .output/server/index.mjs
+PORT=3872 node server/index.mjs
 ```
